@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "cursoRN",
+    "slug": "cursoRN",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
