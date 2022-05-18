@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Keyboard, Modal, TouchableWithoutFeedback, Alert } from "react-native"
+import { Keyboard, Modal, Alert } from "react-native"
 
 import { Button } from "../../components/Forms/Button"
 import { CategorySelectButton } from "../../components/Forms/CategorySelectButton"
@@ -19,6 +19,7 @@ import { InputForm } from "../../components/Forms/InputForm"
 
 import * as Yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
+import { TouchableWithoutFeedback } from "react-native-gesture-handler"
 interface FormData {
   name: string
   amount: string
@@ -74,7 +75,11 @@ export function Register() {
   }
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <TouchableWithoutFeedback
+      onPress={Keyboard.dismiss}
+      containerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+    >
       <Container>
         <Header>
           <Title>Cadastro</Title>

@@ -9,7 +9,10 @@ import {
 } from "@expo-google-fonts/poppins"
 
 import theme from "./src/global/styles/theme"
-import { Register } from "./src/screens/Register"
+import { GestureHandlerRootView } from "react-native-gesture-handler"
+
+import { NavigationContainer } from "@react-navigation/native"
+import { AppRoutes } from "./src/routes/app.routes"
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,7 +27,11 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Register />
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <NavigationContainer>
+          <AppRoutes />
+        </NavigationContainer>
+      </GestureHandlerRootView>
     </ThemeProvider>
   )
 }
